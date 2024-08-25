@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* för att lägga "gameboard" och "info" OVANPÅ varann  */
+  /* istället för BREDVID varann! */
+  flex-direction: column;
+}
+
+#gameboard {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  border: solid 1px black;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border: solid 2px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Vad händer om man ta bort denna rad? */
+  /* Varför? */
+  box-sizing: border-box;
+}
+
+.circle {
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+
+  /* Update #1 */
+  /* Ändra färgen på Circle så att den matchar den gröna i Systementor logo */
+  /* border: 15px solid blue; */
+  border: 15px solid rgb(97, 208, 130);
+
+  box-sizing: border-box;
+}
+
+/* Koden för class cross är ganska komplex... */
+/* Lägg a cross kod i chat-gpt och be den förklara! */
+.cross {
+  height: 90px;
+  width: 90px;
+  position: relative;
+  transform: rotate(45deg);
+}
+
+.cross::before,
+.cross::after {
+  content: "";
+  position: absolute;
+  background-color: red;
+}
+
+.cross::before {
+  left: 50%;
+  width: 30%;
+  height: 100%;
+  margin-left: -15%;
+}
+
+.cross::after {
+  top: 50%;
+  height: 30%;
+  width: 100%;
+  margin-top: -15%;
+}
+
+/* Update #2 - Ställ in bredden på Systmenetor logo i ccs filen istället! */
+.logo {
+  width: 300px;
+}
