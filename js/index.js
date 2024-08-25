@@ -27,7 +27,7 @@ function createBoard() {
   // Update #4a - Kan man ta bort 'index'
   // Update #4b - Kan man ta bort '_cell'
   // startCells.forEach((_cell, index) => {
-  startCells.forEach((_cell) => {
+  startCells.forEach(() => {
     const cellElement = document.createElement("div");
     cellElement.classList.add("square");
 
